@@ -1,0 +1,22 @@
+@model Book.Models.Category
+
+@{
+    ViewData["Title"] = "Xóa thể loại";
+}
+
+<h1>Xóa thể loại</h1>
+
+<h3 class="text-danger">Bạn có chắc muốn xóa thể loại này không?</h3>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+<dl class="row" style="max-width: 500px;">
+    <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Name)</dt>
+    <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
